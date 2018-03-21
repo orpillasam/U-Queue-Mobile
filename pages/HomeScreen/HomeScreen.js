@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Image, View, Text } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import  LogoTitle  from '../../components/LogoTitle';
+import  LogoTitle  from '../../components/LogoTitle/LogoTitle';
 
 class HomeScreen extends React.Component {
     static navigationOptions = ({ navigation }) => {
