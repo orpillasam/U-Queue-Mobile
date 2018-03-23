@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Image, View, Text } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
-class DetailsScreen extends React.Component {
+class MenuScreen extends React.Component {
     static navigationOptions = ({ navigation, navigationOptions }) => {
       const { params } = navigation.state;
   
@@ -34,7 +34,7 @@ class DetailsScreen extends React.Component {
             />
             <Button
               title="Go to Details... again"
-              onPress={() => this.props.navigation.navigate('Details')}
+              onPress={() => this.props.navigation.navigate('Queue')}
             />
             <Button
               title="Go back"
@@ -45,4 +45,4 @@ class DetailsScreen extends React.Component {
     }
 }
 
-export default DetailsScreen;
+export default MenuScreen;

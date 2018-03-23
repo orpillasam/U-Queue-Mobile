@@ -2,8 +2,9 @@ import React from 'react';
 import { Button, Image, View, Text } from 'react-native';
 import { StackNavigator } from 'react-navigation'; // Version can be specified in package.json
 import HomeScreen from './pages/HomeScreen';
-import DetailsScreen from './pages/DetailsScreen';
+import QueueScreen from './pages/QueueScreen';
 import ModalScreen from './components/ModalScreen/ModalScreen';
+import MenuScreen from './pages/MenuScreen';
 
 
 const MainStack = StackNavigator(
@@ -12,14 +13,17 @@ const MainStack = StackNavigator(
       screen: HomeScreen,
     },
     Details: {
-      screen: DetailsScreen,
+      screen: QueueScreen,
     },
+    Menu: {
+      screen: MenuScreen,
+    }
   },
   {
     initialRouteName: 'Home',
     navigationOptions: {
       headerStyle: {
-        backgroundColor: '#f4511e',
+        backgroundColor: '#708090',
       },
       headerTintColor: '#fff',
       headerTitleStyle: {
