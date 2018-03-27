@@ -5,42 +5,41 @@ import HomeScreen from './pages/HomeScreen';
 import DetailsScreen from './pages/DetailsScreen';
 import ModalScreen from './components/ModalScreen/ModalScreen';
 
-
 const MainStack = StackNavigator(
   {
     Home: {
-      screen: HomeScreen,
+      screen: HomeScreen
     },
     Details: {
-      screen: DetailsScreen,
-    },
+      screen: DetailsScreen
+    }
   },
   {
     initialRouteName: 'Home',
     navigationOptions: {
       headerStyle: {
-        backgroundColor: '#f4511e',
+        backgroundColor: '#708090'
       },
       headerTintColor: '#fff',
       headerTitleStyle: {
-        fontWeight: 'bold',
-      },
-    },
+        fontWeight: 'bold'
+      }
+    }
   }
 );
 
 const RootStack = StackNavigator(
   {
     Main: {
-      screen: MainStack,
+      screen: MainStack
     },
     MyModal: {
-      screen: ModalScreen,
-    },
+      screen: ModalScreen
+    }
   },
   {
     mode: 'modal',
-    headerMode: 'none',
+    headerMode: 'none'
   }
 );
 
