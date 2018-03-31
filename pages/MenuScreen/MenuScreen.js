@@ -1,13 +1,12 @@
 import React from 'react';
 import { Button, Image, View, Text } from 'react-native';
-import { StackNavigator } from 'react-navigation';
 
 class MenuScreen extends React.Component {
     static navigationOptions = ({ navigation, navigationOptions }) => {
       const { params } = navigation.state;
   
       return {
-        title: params ? params.otherParam : 'A Nested Details Screen',
+        title: params ? params.otherParam : 'Restaurant Menu',
         /* These values are used instead of the shared configuration! */
         headerStyle: {
           backgroundColor: navigationOptions.headerTintColor,
@@ -28,7 +27,7 @@ class MenuScreen extends React.Component {
             <Text>itemId: {JSON.stringify(itemId)}</Text>
             <Text>otherParam: {JSON.stringify(otherParam)}</Text>
             <Button
-              title="Update the title"
+              title="Menu"
               onPress={() =>
                 this.props.navigation.setParams({ otherParam: 'Updated!' })}
             />
