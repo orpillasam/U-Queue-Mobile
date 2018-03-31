@@ -10,13 +10,13 @@ class HomeScreen extends React.Component {
   
       return {
         headerTitle: <LogoTitle />,
-        headerLeft: (
-          <Button
-            onPress={() => navigation.navigate('MyModal')}
-            title="Info"
-            color="#708090"
-          />
-        ),
+        // headerLeft: (
+        //   <Button
+        //     onPress={() => navigation.navigate('MyModal')}
+        //     title="Info"
+        //     color="#708090"
+        //   />
+        // ),
         headerRight: (
           <Button  onPress={() =>  navigation.navigate('Queue')} title="Q" color="#708090" />
         ),
