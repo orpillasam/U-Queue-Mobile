@@ -1,1 +1,1 @@
-export { default } from './QueueScreen';
+export { default } from './MenuScreen';

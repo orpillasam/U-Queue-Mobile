@@ -1,47 +1,43 @@
 import React from 'react';
-import { Button, Image, View, Text } from 'react-native';
+import {
+  Button,
+  Image,
+  View,
+  Text,
+  List,
+  ListItem,
+  FlatList
+} from 'react-native';
+import  LogoTitle  from '../../components/LogoTitle/LogoTitle';
 
 class MenuScreen extends React.Component {
-    static navigationOptions = ({ navigation, navigationOptions }) => {
-      const { params } = navigation.state;
-  
-      return {
-        title: params ? params.otherParam : 'Restaurant Menu',
-        /* These values are used instead of the shared configuration! */
-        headerStyle: {
-          backgroundColor: navigationOptions.headerTintColor,
-        },
-        headerTintColor: navigationOptions.headerStyle.backgroundColor,
-      };
+  static navigationOptions = ({ navigation }) => {
+    const params = navigation.state.params || {};
+
+    return {
+      headerTitle: <LogoTitle />, 
     };
+  };
   
     render() {
-        /* 2. Read the params from the navigation state */
-        const { params } = this.props.navigation.state;
-        const itemId = params ? params.itemId : null;
-        const otherParam = params ? params.otherParam : null;
-    
+
         return (
-          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Details Screen</Text>
-            <Text>itemId: {JSON.stringify(itemId)}</Text>
-            <Text>otherParam: {JSON.stringify(otherParam)}</Text>
-            <Button
-              title="Menu"
-              onPress={() =>
-                this.props.navigation.setParams({ otherParam: 'Updated!' })}
-            />
-            <Button
-              title="Go to Details... again"
-              onPress={() => this.props.navigation.navigate('Queue')}
-            />
-            <Button
-              title="Go back"
-              onPress={() => this.props.navigation.goBack()}
-            />
-          </View>
+          <FlatList
+            data={[
+              { name: 'James' },
+              { name: 'Alexis' },
+              { name: 'Jessie' },
+              { name: 'Tom' },
+              { name: 'Geralt' },
+              { name: 'Carey' },
+              { name: 'Kim' },
+              { name: 'Jessica' }
+            ]}
+            renderItem={({ item }) => <Text>{item.name}</Text>}
+            keyExtractor={item => item.name}
+          />
         );
+      }
     }
-}
 
 export default MenuScreen;
