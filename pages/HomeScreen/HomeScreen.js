@@ -5,23 +5,37 @@ import  LogoTitle  from '../../components/LogoTitle/LogoTitle';
 // import  MenuButton  from '../../components/Buttons/MenuButton';
 
 class HomeScreen extends React.Component {
-    static navigationOptions = ({ navigation }) => {
-      const params = navigation.state.params || {};
+
+  static navigationOptions = {
+    headerTitle: <LogoTitle />,
+    // headerRight: (
+    //   <Button
+    //     onPress={() => alert('This is a button!')}
+    //     title="Info"
+    //     color="#fff"
+    //   />
+    // ),
+  };
+
+    // static navigationOptions = ({ navigation }) => {
+    //   const params = navigation.state.params || {};
   
-      return {
-        headerTitle: <LogoTitle />,
-        // headerLeft: (
-        //   <Button
-        //     onPress={() => navigation.navigate('MyModal')}
-        //     title="Info"
-        //     color="#708090"
-        //   />
-        // ),
-        headerRight: (
-          <Button  onPress={() =>  navigation.navigate('Queue')} title="Q" color="#708090" />
-        ),
-      };
-    };
+    //   return {
+
+        
+    //     headerTitle: <LogoTitle />,
+    //     // headerLeft: (
+    //     //   <Button
+    //     //     onPress={() => navigation.navigate('MyModal')}
+    //     //     title="Info"
+    //     //     color="#708090"
+    //     //   />
+    //     // ),
+    //     headerRight: (
+    //       <Button  onPress={() =>  navigation.navigate('Queue')} title="Q" color="#708090" />
+    //     ),
+    //   };
+    // };
   
     // componentWillMount() {
     //   this.props.navigation.setParams({ increaseCount: this._increaseCount });

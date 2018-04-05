@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import  LogoTitle  from '../../components/LogoTitle/LogoTitle';
 
-class QueueScreen extends React.Component {
+class SettingsScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     const params = navigation.state.params || {};
 
@@ -40,4 +40,4 @@ class QueueScreen extends React.Component {
       }
     }
 
-export default QueueScreen;
+export default SettingsScreen;
