@@ -6,7 +6,7 @@ class LogoTitle extends React.Component {
   render() {
     return (
       <Image
-        source={require('../../logo.png')}
+        source={require('../../assets/icons/uqueue_logo.png')}
         style={{ width: 30, height: 30 }}
       />
     );

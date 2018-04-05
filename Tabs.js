@@ -8,6 +8,7 @@ import QueueScreen from './pages/QueueScreen/QueueScreen';
 import SettingsScreen from './pages/SettingsScreen/SettingsScreen';
 import MenuScreen from './pages/MenuScreen/MenuScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Login from './components/Login/Login';
 
 
 
@@ -15,6 +16,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 const MainStack = StackNavigator(
   {
     Home: {
+      screen: Login
+    },
+    MemberArea: {
       screen: HomeScreen
     },
     Queue: {

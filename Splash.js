@@ -10,6 +10,8 @@ export default class Splash extends Component {
                 <Image source={require('./assets/icons/uqueue_logo.png')} style={styles.logo}>
                 </Image>
                     <Text style={styles.title}>Welcome to the Ultimate Line Management Tool</Text>       
+            
+            
             </View>
         );
     }
