@@ -75,11 +75,13 @@ const AppStack = StackNavigator (
     Start: {
       screen: StartStack
     },
-    Home: {
-      screen: MainStack
-    },    // Tabs: {
-    //   screen: Tabs
+    // Home: {
+    //   screen: MainStack
+    // },  
+    Tabs: {
+      screen: Tabs
     },
+  },
     {
 
       navigationOptions: {

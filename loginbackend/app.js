@@ -33,7 +33,7 @@ app.use(function(req, res, next) {
 });
 
 // // Set up promises with mongoose
-// mongoose.Promise = global.Promise;
+// mongoose.Promise = gl366obal.Promise;
 // // Connect to the Mongo DB
 // mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/uqueuedb', {
 //   useMongoClient: true

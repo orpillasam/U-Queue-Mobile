@@ -47,16 +47,16 @@ const MainStack = StackNavigator (
     Home: {
       screen: HomeScreen
     },
-    Queue: {
-      screen: QueueScreen
-    },
+    // Queue: {
+    //   screen: QueueScreen
+    // },
     Menu: {
       screen: MenuScreen
     },
   },
   {
   navigationOptions: {
-    header: false,
+    // header: false,
     headerTitle: <LogoTitle />,
     // headerStyle: {
     //   backgroundColor: '#708090'
@@ -69,19 +69,20 @@ const MainStack = StackNavigator (
   }
 )
 
-const AppStack = StackNavigator (
-  {
-    Start: {
-      screen: StartStack
-    },
-    Home: {
-      screen: MainStack
-    },    // Tabs: {
+// const AppStack = StackNavigator (
+//   {
+//     Start: {
+//       screen: StartStack
+//     },
+//     Home: {
+//       screen: MainStack
+//     },  
+      // Tabs: {
     //   screen: Tabs
     // }
 
-  }
-)
+//   }
+// )
 
 
 
@@ -130,7 +131,7 @@ export default Tabs = TabNavigator(
           iconName = `ios-home${focused ? '' : '-outline'}`;
         } 
         else if (routeName === 'Queue') {
-          iconName = `ios-home${focused ? '' : '-outline'}`;
+          iconName = `ion-load-a${focused ? '' : '-outline'}`;
         }
         else if (routeName === 'Settings') {
           iconName = `ios-options${focused ? '' : '-outline'}`;

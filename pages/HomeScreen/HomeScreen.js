@@ -21,7 +21,7 @@ class HomeScreen extends React.Component {
     // header: true,
     headerTitle: "U-QUEUE",
     headerTitleStyle: {
-      marginLeft: 200,
+      marginLeft: 150,
       alignText: 'center',
       color: "#fff"
     },
@@ -139,6 +139,7 @@ const styles = StyleSheet.create({
   box: {
     flex: 1, // Two eighths of the screen.
     margin: 10,
+    marginTop: 100,
     alignItems: "center", // Center child elements horizontally.
     justifyContent: "center" // Center child elements vertically.
   },
@@ -150,7 +151,8 @@ const styles = StyleSheet.create({
   // Text styles
   headline: {
     color: "#8fbc8b",
-    fontSize: 20
+    fontSize: 20,
+    marginTop: 80
   },
   buttonContainer: {
     backgroundColor: '#FF6347',
@@ -158,7 +160,7 @@ const styles = StyleSheet.create({
     height: 40,
     width: 300,
     
-    marginTop: 15,
+    marginTop: 80,
 },
 buttonText: {
     textAlign: 'center',

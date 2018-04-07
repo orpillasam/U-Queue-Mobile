@@ -3,6 +3,8 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 
 class SettingsScreen extends Component {
+
+  
   render() {
     return (
       <View styles={styles.container}>
@@ -34,6 +36,7 @@ const styles = StyleSheet.create({
   container: {
     flex:1,
     marginTop: 40,
+   
     
   }
 })
