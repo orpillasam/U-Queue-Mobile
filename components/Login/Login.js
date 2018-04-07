@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
-import { StyleSheet, Image, View, Text  } from 'react-native';
+import { StyleSheet, Image, View, Text, KeyboardAvoidingView  } from 'react-native';
 import LoginForm from './LoginForm';
 
 export default class Login extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: '',
+            password: '',
+        }
+    }
+
     render() {
         return (
+            <KeyboardAvoidingView behavior="padding" style={styles.container}> 
             <View style={styles.container}>
                 <View style={styles.logoContainer}>
                     <Image 
@@ -17,6 +27,7 @@ export default class Login extends Component {
                 </View>
 
             </View>
+            </KeyboardAvoidingView>
         );
     }
 }
@@ -24,7 +35,7 @@ export default class Login extends Component {
 const styles = StyleSheet.create({
     container: {
         flex:1,
-        backgroundColor: 'blue',
+        backgroundColor: '#708090',
     },
     logoContainer:{
         alignItems: 'center',

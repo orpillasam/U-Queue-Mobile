@@ -10,34 +10,46 @@ import MenuScreen from './pages/MenuScreen/MenuScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Tabs from './Tabs';
 import Splash from './Splash';
-import Login from './components/Login/Login';
+import LoginForm from './components/Login/LoginForm';
+import Profile from './components/Profile/Profile';
+import Signup from './components/Signup/Signup';
 
 
-// const MainStack = StackNavigator(
-//   {
-//     Home: {
-//       screen: HomeScreen
-//     },
-//     Queue: {
-//       screen: QueueScreen
-//     },
-//     Menu: {
-//       screen: MenuScreen
-//     },
-//   },
-//   {
-//     initialRouteName: 'Home',
-//     navigationOptions: {
-//       headerStyle: {
-//         backgroundColor: '#708090'
-//       },
-//       headerTintColor: '#fff',
-//       headerTitleStyle: {
-//         fontWeight: 'bold'
-//       }
-//     }
-//   }
-// );
+const MainStack = StackNavigator(
+  {
+    Splash: {
+      screen: Splash
+    },
+    Login: {
+      screen: LoginForm
+    }, 
+    Home: {
+      screen: HomeScreen
+    },
+    Signup: {
+      screen: Signup
+    }
+    // Queue: {
+    //   screen: QueueScreen
+    // },
+    // Menu: {
+    //   screen: MenuScreen
+    // },
+  },
+  {
+    initialRouteName: 'Splash',
+    navigationOptions: {
+      header: false
+      // headerStyle: {
+      //   backgroundColor: '#708090'
+      // }
+      // headerTintColor: '#fff',
+      // headerTitleStyle: {
+      //   fontWeight: 'bold'
+      // }
+    }
+  }
+);
 
 // const Tabs = TabNavigator(
 //   {
@@ -79,6 +91,6 @@ import Login from './components/Login/Login';
 
 export default class App extends React.Component {
   render() {
-    return <Tabs />;
+    return <MainStack />;
   }
 }

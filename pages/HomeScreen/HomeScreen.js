@@ -87,6 +87,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     marginTop: 10,
     alignItems: "center",
+    backgroundColor: "#708090"
     // Giving some extra top margin to the iOS container so the content isn't in the statusbar
   },
 

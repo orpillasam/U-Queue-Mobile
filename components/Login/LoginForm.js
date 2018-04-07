@@ -20,51 +20,71 @@ export default class LoginForm extends Component {
     _loadIntitialState = async () => {
         var value = await AsyncStorage.getItem('user');
         if (value !== null) {
-            this.props.nagivation.navigate('Profile');
+            this.props.nagivation.navigate('Home');
         }
     }
 
     render() {
         return (
-            <KeyboardAvoidingView behavior="padding" style={styles.container}> 
-                <StatusBar
-                    barStyle='light-content'
-                    />
-                <TextInput 
-                    placeholder="username or email"
-                    onChangeText={ (username) => this.setState({username})}
-                    placeholderTextColor='rgba(255,255,255,.2)'
-                    returnKeyType ='next'
-                    onSubmitEditing={() => this.passwordInput.focus()}
-                    keyboardType='email-address'
-                    autoCapitalize='none'
-                    autoCorrect={false}
-                    style={styles.input}/>
-                <TextInput 
-                    placeholder="password"
-                    onChangeText={ (password) => this.setState({password})}
-                    placeholderTextColor='rgba(255,255,255,.2)'
-                    secureTextEntry 
-                    returnKeyType ='go'
-                    style={styles.input}
-                    ref={(input) => this.passwordInput = input}
+
+            <KeyboardAvoidingView behavior="padding" style={styles.container1}> 
+                <View style={styles.container}>
+                    <View style={styles.logoContainer}>
+                        <Image 
+                            style={styles.logo}
+                            source={require('../../assets/icons/uqueue_logo.png')} style={styles.logo}></Image>
+                        <Text style={styles.title}>Welcome to the Ultimate Line Management Tool</Text>
+                    </View>
+
+                    <View style={styles.formContainer}>
                     
-                    />
-                <TouchableOpacity 
-                    onPress={this.login}
-                    style={styles.buttonContainer}>
-                    <Text style={styles.buttonText}>LOGIN</Text>
-                </TouchableOpacity>
+                        <View style={styles.container}>
+                            <StatusBar
+                                barStyle='light-content'
+                                />
+                            <TextInput 
+                                placeholder="username or email"
+                                onChangeText={ (username) => this.setState({username})}
+                                placeholderTextColor='rgba(255,255,255,.2)'
+                                returnKeyType ='next'
+                                onSubmitEditing={() => this.passwordInput.focus()}
+                                keyboardType='email-address'
+                                autoCapitalize='none'
+                                autoCorrect={false}
+                                style={styles.input}
+                            />
+                            <TextInput 
+                                placeholder="password"
+                                onChangeText={ (password) => this.setState({password})}
+                                placeholderTextColor='rgba(255,255,255,.2)'
+                                secureTextEntry={true}
+                                returnKeyType ='go'
+                                style={styles.input}
+                                ref={(input) => this.passwordInput = input}              
+                            />
+                            <TouchableOpacity 
+                                // onPress={this.login}
+                                // onPress={this.props.nagivation.navigate('Profile')}
+                                onPress={() => this.props.navigation.navigate('Home')}
+                                style={styles.buttonContainer}>
+                                <Text style={styles.buttonText}>LOGIN</Text>
+                                
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+
+                </View>
             </KeyboardAvoidingView>
+  
         );
     }
 
     login = () => {
 
-        alert(this.state.username)
-        alert(this.state.password)
+        // alert(this.state.username)
+        // alert(this.state.password)
 
-        fetch('http://192.168.7.66/users', {
+        fetch('http://192.168.70.152/users', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -72,11 +92,13 @@ export default class LoginForm extends Component {
             },
             body: JSON.stringify({
                 username: this.state.username,
-                password: this.state.pssword,
+                password: this.state.password,
             })
         })
         .then((response) => response.json())
         .then ((res) => {
+
+            alert(res.message); 
             if (res.success === true) {
                 AsyncStorage.setItem('user', res.user);
                 this.props.navigation.navigate('Profile');
@@ -86,7 +108,6 @@ export default class LoginForm extends Component {
             }    
         })
         .done();
-        
 
     }
 
@@ -95,14 +116,41 @@ export default class LoginForm extends Component {
 
 
 const styles = StyleSheet.create({
+
+    container1: {
+        flex:1,
+        backgroundColor: '#708090',
+    },
+    logoContainer:{
+        alignItems: 'center',
+        flexGrow: 1,
+        justifyContent: 'center'
+    },
+    logo: {
+        width: 150,
+        height: 140
+
+    },
+    title: {
+        color:'#ffffff',
+        marginTop: 10,
+        width: 160,
+        textAlign: 'center',
+        opacity: .9
+    },
+    formContainer:{
+
+    },
+
     container: {
-        padding: 20
+        padding: 20,
+        marginTop: 100
     },
     input: {
         height: 40,
         backgroundColor: 'rgba(255,255,255,.2)',
         marginBottom: 15,
-        color: '#fff',
+        color: 'black',
         paddingHorizontal: 10,
         marginBottom: 30
     },

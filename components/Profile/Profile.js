@@ -27,12 +27,10 @@ export default class LoginForm extends Component {
     render() {
         return (
          <View style={styles.container}>
-            <Text style={styles.header}> </Text>
+            <Text style={styles.header}>Profile </Text>
          </View>  
         )
     }
-
-   
 
 }
 
