@@ -25,7 +25,7 @@ export default class Splash extends Component {
                         // onPress={this.login}
                         // onPress={this.props.nagivation.navigate('Profile')}
                         onPress={() => this.props.navigation.navigate('Login')}
-                        style={styles.buttonContainer}>
+                        style={styles.buttonLogin}>
                         <Text style={styles.buttonText}>LOGIN</Text>
                     
                     </TouchableOpacity>
@@ -33,7 +33,7 @@ export default class Splash extends Component {
                         // onPress={this.login}
                         // onPress={this.props.nagivation.navigate('Profile')}
                         onPress={() => this.props.navigation.navigate('Signup')}
-                        style={styles.buttonContainer}>
+                        style={styles.buttonSignup}>
                         <Text style={styles.buttonText}>SIGNUP</Text>
                         
                     </TouchableOpacity>
@@ -91,19 +91,25 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
-    buttonContainer: {
-        backgroundColor: '#2980b9',
-        paddingVertical: 15,
+    buttonSignup: {
+        backgroundColor: '#66cdaa',
+        paddingVertical: 10,
         height: 40,
         width: 300,
         
+        marginTop: 15,
+    },
+    buttonLogin: {
+        backgroundColor: '#FF6347',
+        paddingVertical: 10,
+        height: 40,
+        width: 300,
         marginTop: 15,
     },
     buttonText: {
         textAlign: 'center',
         color: '#ffffff',
         fontWeight: '700',
-        marginBottom: 10
     }
 
 });

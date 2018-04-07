@@ -1,49 +1,41 @@
-import React from 'react';
-import {
-  Button,
-  Image,
-  View,
-  Text,
-  List,
-  ListItem,
-  FlatList,
-  StyleSheet
-} from 'react-native';
-import  LogoTitle  from '../../components/LogoTitle/LogoTitle';
+import React, { Component } from 'react';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import { List, ListItem } from 'react-native-elements';
 
-class SettingsScreen extends React.Component {
-  static navigationOptions = ({ navigation }) => {
-    const params = navigation.state.params || {};
+class SettingsScreen extends Component {
+  render() {
+    return (
+      <View styles={styles.container}>
+      <ScrollView  >
+        <List>
+          <ListItem
+            title="Notifications"
+          />
+          <ListItem
+            title="Profile"
+          />
+          <ListItem
+            title="Password"
+          />
+        </List>
+        <List>
+          <ListItem
+            title="Sign Out"
+            rightIcon={{ name: 'cancel' }}
+          />
+        </List>
+      </ScrollView>
+      </View>
+    );
+  }
+}
 
-    return {
-      headerTitle: <LogoTitle />, 
-    };
-  };
-  
-    render() {
-
-        return (
-          <View>
-            <Text style = {styles.text}>Settings</Text>
-         </View>
-        );
-      }
-    }
+const styles = StyleSheet.create({
+  container: {
+    flex:1,
+    marginTop: 40,
     
-
-    const styles = StyleSheet.create({
-      // We set flex to 1 since it's taking up the whole screen
-      container: {
-        flex: 1,
-        flexDirection: "column",
-        marginTop: 10,
-        alignItems: "center",
-        // Giving some extra top margin to the iOS container so the content isn't in the statusbar
-      },
-      text: {
-        fontWeight: '700'
-      }
-      });
-
+  }
+})
 
 export default SettingsScreen;

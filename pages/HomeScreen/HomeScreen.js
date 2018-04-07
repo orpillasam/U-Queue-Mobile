@@ -1,22 +1,37 @@
 import React from 'react';
-import { StyleSheet, Button, Image, View, Text } from 'react-native';
+import { StyleSheet, Button, Image, View, Text, TouchableOpacity } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import  LogoTitle  from '../../components/LogoTitle/LogoTitle';
+import { List, ListItem } from 'react-native-elements';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 // import  MenuButton  from '../../components/Buttons/MenuButton';
 
 class HomeScreen extends React.Component {
 
   static navigationOptions = {
-    headerTitle: <LogoTitle />,
-    // headerRight: (
-    //   <Button
-    //     onPress={() => alert('This is a button!')}
-    //     title="Info"
-    //     color="#fff"
-    //   />
-    // ),
-  };
+    // header: true,
+    headerTitle: "U-QUEUE",
+    headerTitleStyle: {
+      marginLeft: 200,
+      alignText: 'center',
+      color: "#fff"
+    },
+    headerStyle: {
+      backgroundColor: '#708090'
+    },
+    headerRight:( <Image  onPress={() => this.props.navigation.navigate('Queue')}
+    source={require('../../assets/icons/refresh.png')}
+    style={{ width: 30, height: 30 }}
 
+  />
+  )
+    // headerTintColor: '#blue',
+    // headerTitleStyle: {
+    //   fontWeight: 'bold'
+    // <TouchableOpacity>
+    // onPress= {this.props.navigation.navigate('Queue')}</TouchableOpacity>
+
+}
     // static navigationOptions = ({ navigation }) => {
     //   const params = navigation.state.params || {};
   
@@ -65,14 +80,20 @@ class HomeScreen extends React.Component {
             <Text style={styles.numberData}>24 Minutes</Text>
           </View>
         
-          <Button
+          <Button style={styles.buttonContainer}
           title="Menu Button"
           onPress={() => this.props.navigation.navigate('Menu')}
           
-        />
+           />
 
+           {/* <TouchableOpacity>
+           onPress={this.login}
+          onPress={this.props.nagivation.navigate('Profile')}
+           onPress={() => this.props.navigation.navigate('Menu')}
+          style={styles.buttonContainer}>
+           <Text style={styles.buttonText}>MENU</Text>
 
-   
+           </TouchableOpacity> */}
         </View>
 
       );
@@ -87,7 +108,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     marginTop: 10,
     alignItems: "center",
-    backgroundColor: "#708090"
+    backgroundColor: "#fff"
     // Giving some extra top margin to the iOS container so the content isn't in the statusbar
   },
 
@@ -121,7 +142,22 @@ const styles = StyleSheet.create({
   headline: {
     color: "#8fbc8b",
     fontSize: 20
-  }
+  },
+  buttonContainer: {
+    backgroundColor: '#FF6347',
+    paddingVertical: 15,
+    height: 40,
+    width: 300,
+    
+    marginTop: 15,
+},
+buttonText: {
+    textAlign: 'center',
+    color: '#ffffff',
+    fontWeight: '700',
+    marginBottom: 15,
+    fontSize: 20
+}
 });
 
 

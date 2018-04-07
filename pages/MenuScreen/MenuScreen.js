@@ -6,38 +6,38 @@ import {
   Text,
   List,
   ListItem,
-  FlatList
+  FlatList,
+  StyleSheet
 } from 'react-native';
 import  LogoTitle  from '../../components/LogoTitle/LogoTitle';
 
 class MenuScreen extends React.Component {
-  static navigationOptions = ({ navigation }) => {
-    const params = navigation.state.params || {};
-
-    return {
-      headerTitle: <LogoTitle />, 
-    };
+    static navigationOptions = {
+    headerTitle: <LogoTitle />,
+    headerRight: (
+      <Button
+        onPress={() => alert('This is a button!')}
+        title="Info"
+        color="#fff"
+      />
+    ),
   };
   
     render() {
 
         return (
-          <FlatList
-            data={[
-              { name: 'James' },
-              { name: 'Alexis' },
-              { name: 'Jessie' },
-              { name: 'Tom' },
-              { name: 'Geralt' },
-              { name: 'Carey' },
-              { name: 'Kim' },
-              { name: 'Jessica' }
-            ]}
-            renderItem={({ item }) => <Text>{item.name}</Text>}
-            keyExtractor={item => item.name}
-          />
+          <Image 
+            style={styles.menu}
+            source={require('../../assets/images/menu.png')}></Image>
         );
       }
     }
+
+const styles = StyleSheet.create({
+  menu: {
+    width: 460,
+    height: 640     
+  }
+})
 
 export default MenuScreen;

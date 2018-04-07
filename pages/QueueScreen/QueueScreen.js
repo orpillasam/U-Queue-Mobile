@@ -11,13 +11,13 @@ import {
 import  LogoTitle  from '../../components/LogoTitle/LogoTitle';
 
 class QueueScreen extends React.Component {
-  static navigationOptions = ({ navigation }) => {
-    const params = navigation.state.params || {};
+  // static navigationOptions = ({ navigation }) => {
+  //   const params = navigation.state.params || {};
 
-    return {
-      headerTitle: <LogoTitle />, 
-    };
-  };
+  //   return {
+  //     headerTitle: <LogoTitle />, 
+  //   };
+  // };
   
     render() {
 

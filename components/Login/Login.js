@@ -14,15 +14,15 @@ export default class Login extends Component {
 
     render() {
         return (
-            <KeyboardAvoidingView behavior="padding" style={styles.container}> 
+            <KeyboardAvoidingView behavior="padding" style={styles1.container}> 
             <View style={styles.container}>
-                <View style={styles.logoContainer}>
+                <View style={styles1.logoContainer}>
                     <Image 
-                        style={styles.logo}
+                        style={styles1.logo}
                         source={require('../../assets/icons/uqueue_logo.png')} style={styles.logo}></Image>
-                    <Text style={styles.title}>Welcome to the Ultimate Line Management Tool</Text>
+                    <Text style={styles1.title}>Welcome to the Ultimate Line Management Tool</Text>
                 </View>
-                <View style={styles.formContainer}>
+                <View style={styles1.formContainer}>
                 <LoginForm/>
                 </View>
 
@@ -32,7 +32,7 @@ export default class Login extends Component {
     }
 }
 
-const styles = StyleSheet.create({
+const styles1 = StyleSheet.create({
     container: {
         flex:1,
         backgroundColor: '#708090',

@@ -13,9 +13,10 @@ import Splash from './Splash';
 import LoginForm from './components/Login/LoginForm';
 import Profile from './components/Profile/Profile';
 import Signup from './components/Signup/Signup';
+import LogoTitle  from './components/LogoTitle/LogoTitle';
 
 
-const MainStack = StackNavigator(
+const StartStack = StackNavigator(
   {
     Splash: {
       screen: Splash
@@ -23,18 +24,9 @@ const MainStack = StackNavigator(
     Login: {
       screen: LoginForm
     }, 
-    Home: {
-      screen: HomeScreen
-    },
     Signup: {
       screen: Signup
-    }
-    // Queue: {
-    //   screen: QueueScreen
-    // },
-    // Menu: {
-    //   screen: MenuScreen
-    // },
+    },
   },
   {
     initialRouteName: 'Splash',
@@ -50,6 +42,60 @@ const MainStack = StackNavigator(
     }
   }
 );
+
+const MainStack = StackNavigator (
+  {
+    Home: {
+      screen: HomeScreen
+    },
+    Queue: {
+      screen: QueueScreen
+    },
+    Menu: {
+      screen: MenuScreen
+    },
+  },
+  {
+  navigationOptions: {
+    // header: true,
+    // headerTitle: <LogoTitle />,
+    // headerStyle: {
+    //   backgroundColor: '#708090'
+    // },
+    // headerTintColor: '#blue',
+    // headerTitleStyle: {
+    //   fontWeight: 'bold'
+    // }
+  }
+  }
+)
+
+const AppStack = StackNavigator (
+  {
+    Start: {
+      screen: StartStack
+    },
+    Home: {
+      screen: MainStack
+    },    // Tabs: {
+    //   screen: Tabs
+    },
+    {
+
+      navigationOptions: {
+        header: false
+        // headerStyle: {
+        //   backgroundColor: '#708090'
+        // }
+        // headerTintColor: '#fff',
+        // headerTitleStyle: {
+        //   fontWeight: 'bold'
+        // }
+      }
+
+    }
+)
+
 
 // const Tabs = TabNavigator(
 //   {
@@ -91,6 +137,6 @@ const MainStack = StackNavigator(
 
 export default class App extends React.Component {
   render() {
-    return <MainStack />;
+    return < AppStack />;
   }
 }

@@ -5,13 +5,13 @@ import { StackNavigator } from 'react-navigation';
 
 export default class LoginForm extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            username: '',
-            password: '',
-        }
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         username: '',
+    //         password: '',
+    //     }
+    // }
 
     componentDidMount() {
         this._loadIntitialState().done();
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
         marginBottom: 30
     },
     buttonContainer: {
-        backgroundColor: '#2980b9',
+        backgroundColor: '#66CDAA',
         paddingVertical: 15
     },
     buttonText: {

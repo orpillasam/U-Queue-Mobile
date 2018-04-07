@@ -9,16 +9,42 @@ import SettingsScreen from './pages/SettingsScreen/SettingsScreen';
 import MenuScreen from './pages/MenuScreen/MenuScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Login from './components/Login/Login';
+import Splash from './Splash';
+import LoginForm from './components/Login/LoginForm';
+import Profile from './components/Profile/Profile';
+import Signup from './components/Signup/Signup';
+import LogoTitle  from './components/LogoTitle/LogoTitle';
 
+const StartStack = StackNavigator(
+  {
+    Splash: {
+      screen: Splash
+    },
+    Login: {
+      screen: LoginForm
+    }, 
+    Signup: {
+      screen: Signup
+    },
+  },
+  {
+    initialRouteName: 'Splash',
+    navigationOptions: {
+      header: false
+      // headerStyle: {
+      //   backgroundColor: '#708090'
+      // }
+      // headerTintColor: '#fff',
+      // headerTitleStyle: {
+      //   fontWeight: 'bold'
+      // }
+    }
+  }
+);
 
-
-
-const MainStack = StackNavigator(
+const MainStack = StackNavigator (
   {
     Home: {
-      screen: Login
-    },
-    MemberArea: {
       screen: HomeScreen
     },
     Queue: {
@@ -29,18 +55,64 @@ const MainStack = StackNavigator(
     },
   },
   {
-    initialRouteName: 'Home',
-    navigationOptions: {
-      headerStyle: {
-        backgroundColor: '#708090'
-      },
-      headerTintColor: '#fff',
-      headerTitleStyle: {
-        fontWeight: 'bold'
-      }
-    }
+  navigationOptions: {
+    header: false,
+    headerTitle: <LogoTitle />,
+    // headerStyle: {
+    //   backgroundColor: '#708090'
+    // },
+    // headerTintColor: '#blue',
+    // headerTitleStyle: {
+    //   fontWeight: 'bold'
+    // }
   }
-);
+  }
+)
+
+const AppStack = StackNavigator (
+  {
+    Start: {
+      screen: StartStack
+    },
+    Home: {
+      screen: MainStack
+    },    // Tabs: {
+    //   screen: Tabs
+    // }
+
+  }
+)
+
+
+
+// const MainStack = StackNavigator(
+//   {
+//     Home: {
+//       screen: Login
+//     },
+//     MemberArea: {
+//       screen: HomeScreen
+//     },
+//     Queue: {
+//       screen: QueueScreen
+//     },
+//     Menu: {
+//       screen: MenuScreen
+//     },
+//   },
+//   {
+//     initialRouteName: 'Home',
+//     navigationOptions: {
+//       headerStyle: {
+//         backgroundColor: '#708090'
+//       },
+//       headerTintColor: '#fff',
+//       headerTitleStyle: {
+//         fontWeight: 'bold'
+//       }
+//     }
+//   }  
+// );
 
 export default Tabs = TabNavigator(
   {
