@@ -12,16 +12,39 @@ import {
 import  LogoTitle  from '../../components/LogoTitle/LogoTitle';
 
 class MenuScreen extends React.Component {
-    static navigationOptions = {
-    headerTitle: <LogoTitle />,
-    headerRight: (
-      <Button
-        onPress={() => alert('This is a button!')}
-        title="Info"
-        color="#fff"
-      />
-    ),
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+        email: '',
+        username: '',
+        password: '',
+    }
+}
+
+  static navigationOptions = {
+    // header: true,
+    headerTitle: "U-QUEUE",
+    headerTitleStyle: {
+      marginLeft: 140,
+      alignText: 'center',
+      color: "#fff"
+    },
+    headerStyle: {
+      backgroundColor: '#708090'
+    },
+  //   headerRight:( <Image  onPress={() => navigation.navigate('Queue')}
+  //   source={require('../../assets/icons/refresh.png')}
+  //   style={{ width: 30, height: 30 }}
+
+  // />
+  // )
+    // headerTintColor: '#blue',
+    // headerTitleStyle: {
+    //   fontWeight: 'bold'
+    // <TouchableOpacity>
+    // onPress= {this.props.navigation.navigate('Queue')}</TouchableOpacity>
+
+}
   
     render() {
 

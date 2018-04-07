@@ -7,6 +7,15 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 // import  MenuButton  from '../../components/Buttons/MenuButton';
 
 class HomeScreen extends React.Component {
+  
+  constructor(props) {
+    super(props);
+    this.state = {
+        email: '',
+        username: '',
+        password: '',
+    }
+}
 
   static navigationOptions = {
     // header: true,
@@ -19,7 +28,7 @@ class HomeScreen extends React.Component {
     headerStyle: {
       backgroundColor: '#708090'
     },
-    headerRight:( <Image  onPress={() => this.props.navigation.navigate('Queue')}
+    headerRight:( <Image  onPress={() => this.props.navigation.navigate('Home')}
     source={require('../../assets/icons/refresh.png')}
     style={{ width: 30, height: 30 }}
 
